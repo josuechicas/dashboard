@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from '../../auth/token-storage.service';
+
+import { TokenStorageService } from '../auth/token-storage.service';
 
 @Component({
-  selector: 'app-blank',
-  templateUrl: './blank.component.html',
-  styleUrls: ['./blank.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class BlankComponent implements OnInit {
+export class HomeComponent implements OnInit {
   info: any;
 
   constructor(private token: TokenStorageService) { }

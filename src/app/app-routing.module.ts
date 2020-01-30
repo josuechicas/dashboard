@@ -8,43 +8,26 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './utils/guards/auth.guard';
 import { NonAuthGuard } from './utils/guards/non-auth.guard';
+import { HomeComponent } from './home/home.component';
+
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: MainComponent,
-    canActivate: [AuthGuard],
-    canActivateChild: [AuthGuard],
-    children: [
-      {
-        path: 'profile',
-        component: ProfileComponent
-      },
-      {
-        path: 'blank',
-        component: BlankComponent
-      },
-      {
-        path: '',
-        component: DashboardComponent
-      }
-    ]
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [NonAuthGuard]
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    canActivate: [NonAuthGuard]
-  },
-  { path: '**', redirectTo: '' }
-];
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: 'auth/login', component: LoginComponent },
+  { path: 'inicio', component: MainComponent,
 
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'blank', component: BlankComponent },
+      { path: 'admin', component: AdminComponent },
+      { path: '', component: DashboardComponent}]},
+
+      
+
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
