@@ -52,14 +52,7 @@
     <app-messages-dropdown-menu></app-messages-dropdown-menu>
     <!-- Notifications Dropdown Menu -->
     <app-notifications-dropdown-menu></app-notifications-dropdown-menu>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        (click)="logout()"
-      >
-        <i class="fas fa-power-off"></i>
-      </a>
-    </li>
+    <li class="nav-item"><a class="nav-link" routerLink="auth/login" (click)="logout()"><i class="fas fa-power-off"></i></a></li>
   </ul>
 </nav>
 <!-- /.navbar -->

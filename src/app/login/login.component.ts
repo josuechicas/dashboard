@@ -63,7 +63,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       );
     }
     reloadPage() {
-      window.location.reload();
+      //window.location.reload();
+      window.location.href=("inicio");
     }
 
     

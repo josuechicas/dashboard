@@ -3,12 +3,12 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Blank Page</h1>
+        <h1>Informacion de Credenciales</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
           <li class="breadcrumb-item"><a href="#">Home</a></li>
-          <li class="breadcrumb-item active">Blank Page</li>
+          <li class="breadcrumb-item active">Credenciales</li>
         </ol>
       </div>
     </div>
@@ -42,7 +42,6 @@
       </div>
       <!-- /.card-body -->
       <div class="card-footer">
-        Footer
       </div>
       <!-- /.card-footer-->
     </div>
@@ -52,17 +51,3 @@
 <!-- /.content -->
 
 <!--<div *ngIf="info.token; else loggedOut">-->
-<div class="container">
-  <h5 class="text-primary">Informacion</h5>
-  <p>
-    <strong>Usuario:</strong> {{info.username}}<br />
-    <strong>Roles:</strong> {{info.authorities}}<br />
-    <strong>Token:</strong> {{info.token}}.
-  </p>
-  <button class="btn btn-secondary" (click)="logout()"><a href="home"></a>Salir</button>
-  <!--</div>-->
-
-  <ng-template #loggedOut>
-    Por favor Ingresar.
-  </ng-template>
-</div>

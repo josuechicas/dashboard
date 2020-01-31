@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppService } from 'src/app/utils/services/app.service';
+//import { AppService } from 'src/app/utils/services/app.service';
 import { TokenStorageService } from '../../auth/token-storage.service';
 @Component({
   selector: 'app-header',
@@ -15,7 +15,9 @@ export class HeaderComponent implements OnInit {
 
   public searchForm: FormGroup;
 
-  constructor(private appService: AppService, private tokenStorage: TokenStorageService) {}
+  constructor(//private appService: AppService, 
+    private tokenStorage: TokenStorageService, 
+    private token: TokenStorageService) {}
 
   ngOnInit() {
 
@@ -41,6 +43,8 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.appService.logout();
+    this.token.signOut();
+    //window.location.reload();
+    window.location.href=("/");
   }
 }

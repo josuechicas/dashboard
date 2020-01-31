@@ -21,6 +21,7 @@ export class BlankComponent implements OnInit {
 
   logout() {
     this.token.signOut();
-    window.location.reload();
+    //window.location.reload();
+    window.location.href=("/");
   }
 }

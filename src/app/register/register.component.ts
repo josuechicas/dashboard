@@ -1,24 +1,44 @@
-import { Component, OnInit, Renderer2, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from '../auth/auth.service';
+import { SignUpInfo } from '../auth/signup-info';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit, OnDestroy {
-  public registerForm: FormGroup;
-  constructor(private renderer: Renderer2) {}
+export class RegisterComponent implements OnInit {
+  form: any = {};
+  signupInfo: SignUpInfo;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  ngOnInit() {
-    this.renderer.addClass(document.body, 'register-page');
-    this.registerForm = new FormGroup({
-      email: new FormControl(null, Validators.required),
-      password: new FormControl(null, Validators.required)
-    });
-  }
+  constructor(private authService: AuthService) { }
 
-  ngOnDestroy() {
-    this.renderer.removeClass(document.body, 'login-page');
+  ngOnInit() { }
+
+  onSubmit() {
+    console.log(this.form);
+
+    this.signupInfo = new SignUpInfo(
+      this.form.name,
+      this.form.username,
+      this.form.email,
+      this.form.password);
+
+    this.authService.signUp(this.signupInfo).subscribe(
+      data => {
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+      },
+      error => {
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
 }
