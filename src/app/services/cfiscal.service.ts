@@ -28,9 +28,9 @@ export class CFiscalService {
     
   }
 
-  getCFiscal2(id) {
+  getCFiscal2(cude) {
     //return this.http.get('/fesv/consultadte/0110-0000-0110-0000-0000-2020-2202-0100-0000-0011')
-    return this.http.get('http://svfe-recepcion.centralus.azurecontainer.io:8080/fesv/consultadte/' + id)
+    return this.http.get('http://svfe-recepcion.centralus.azurecontainer.io:8080/fesv/consultadte/' + cude)
        .pipe(
          map ( this.crearAreglo )
          //map ( this.crearAreglo2 )

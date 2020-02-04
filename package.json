@@ -25,6 +25,8 @@
     "core-js": "^2.5.4",
     "font-awesome": "4.7.0",
     "ionicons": "2.0.1",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.2.11",
     "ngx-toastr": "^10.2.0",
     "rxjs": "~6.5.3",
     "tslib": "^1.10.0",
