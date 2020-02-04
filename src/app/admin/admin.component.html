@@ -8,8 +8,15 @@
 
     
     <!--<ng-template #signupForm>-->
+
+
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+
         <div class="row col-sm-6" style="max-width:350px;">
           <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            
             <div class="form-group">
               <label for="name">Nombre</label>
               <input type="text" class="form-control" name="name" [(ngModel)]="form.name" #name="ngModel" required />
@@ -50,5 +57,48 @@
             </div>
           </form>
         </div>
+
+
+
+      </div>
+    </div>
       <!--</ng-template>-->
+
+
+
+      <table class="table mt-3 animated fadeIn faster">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">version</th>
+            <th scope="col">tipoDTE</th>
+            <th scope="col">fecEmision</th>
+            <th scope="col">cude</th>
+            <th scope="col">nit</th>
+            <th scope="col">nombre</th>
+            <th scope="col">actividadEconomica</th>
+            <th scope="col">nombreComercial</th>
+  
+  
+  
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cfiscal of cfiscales; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <th>{{ cfiscal.version }}</th>
+            <th>{{ cfiscal.tipoDTE }}</th>
+            <th>{{ cfiscal.fecEmision }}</th>
+            <th>{{ cfiscal.cude }}</th>
+            <th>{{ cfiscal.nit }}</th>
+            <th>{{ cfiscal.nombre }}</th>
+            <th>{{ cfiscal.actividadEconomica }}</th>
+            <th>{{ cfiscal.nombreComercial }}</th>
+  
+  
+  
+  
+          </tr>
+        </tbody>
+      </table>
 

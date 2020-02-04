@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { SignUpInfo } from '../auth/signup-info';
 
+import { CreditoFiscalService } from '../services/credito-fiscal.service';
+import { CFiscalModel } from '../models/cfiscal.model';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -18,13 +21,21 @@ export class AdminComponent implements OnInit {
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
+  cfiscales: CFiscalModel[] = [];
 
  
 
   constructor(//private userService: UserService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private cfiscalService: CreditoFiscalService
+    ) { }
 
   ngOnInit() {
+  
+    this.cfiscalService.getCFiscal()
+      .subscribe( resp => this.cfiscales = resp );
+
+
     /*this.userService.getAdminBoard().subscribe(
       data => {
         this.board = data;

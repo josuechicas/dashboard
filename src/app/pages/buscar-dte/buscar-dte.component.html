@@ -1,0 +1,145 @@
+    <table class="table mt-3 animated fadeIn faster">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">version</th>
+          <th scope="col">tipoDTE</th>
+          <th scope="col">fecEmision</th>
+          <th scope="col">cude</th>
+          <th scope="col">nit</th>
+          <th scope="col">nombre</th>
+          <th scope="col">actividadEconomica</th>
+          <th scope="col">nombreComercial</th>
+
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cfiscal of cfiscales; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <th>{{ cfiscal.version }}</th>
+          <th>{{ cfiscal.tipoDTE }}</th>
+          <th>{{ cfiscal.fecEmision }}</th>
+          <th>{{ cfiscal.cude }}</th>
+          <th>{{ cfiscal.nit }}</th>
+          <th>{{ cfiscal.nombre }}</th>
+          <th>{{ cfiscal.actividadEconomica }}</th>
+          <th>{{ cfiscal.nombreComercial }}</th>
+
+
+
+
+        </tr>
+      </tbody>
+    </table>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<button type="button" (click)="onClickSearch(content)" class="btn btn-primary">Buscar DTE</button>
+
+
+
+
+
+
+<ng-template #content let-modal>
+  <div class="modalheader">
+    <h4 class="modal-title"></h4>
+    <button class="close" aria-label="Close" (click)="closeModal()"></button>
+  </div>
+  <div class="modal-body">
+    <ngb-tabset>
+      <ngb-tab title="Buscar x Id">
+        <ng-template ngbTabContent>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="from-group">
+                <label for="">Id DTE</label>
+                <input type="text" [value]="" (input)="id=$event.target.value" class="form-control" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <button type="button" (click)="onClickSearchById()" class="btn btn-primary">Buscar DTE</button>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-tab>
+
+
+
+      <ngb-tab>
+
+      <ng-template ngbTabTitle="Buscar x Nombre">
+        <p>Buscar por Cude</p>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="from-group">
+              <label for="">Cude</label>
+              <input type="text" [value]="cudeFe" (input)="cudeFe=$event.target.value" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="button" (click)="onClickSearchByCude()" class="btn btn-primary">Buscar DTE</button>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+     
+
+    </ngb-tabset>
+    <br />
+    
+    
+    
+        <div class="row">
+          <div class="col-md-6">
+            <div class="from-group">
+              <label for="">Id DTE</label>
+              <input type="text" [value]="" (input)="id=$event.target.value" class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <button type="button" (click)="onClickSearchById()" class="btn btn-primary">Buscar DTE</button>
+          </div>
+        </div>
+     
+    <h3 class="text-center">Resultados</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>version</th>
+          <th>tipoDTE</th>
+          <th>fecEmision</th>
+          <th>cude</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let cfiscal of cfiscales; let i = index" >
+          <th scope="row">{{ i + 1 }}</th>
+          <th>{{ cfiscal.version }}</th>
+          <th>{{ cfiscal.tipoDTE }}</th>
+          <th>{{ cfiscal.fecEmision }}</th>
+          <th>{{ cfiscal.cude }}</th>
+        
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </ng-template>-->

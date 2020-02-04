@@ -1,5 +1,9 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 
 import { UserComponent } from './user/user.component';
 //import { HomeComponent } from './home/home.component';
@@ -57,6 +61,7 @@ import { NotificationsDropdownMenuComponent } from './main/header/notifications-
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
